@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "agency_id": "1",
+    "title": "Mount Everest Base Camp Trek",
+    "slug": "everest-base-camp",
+    "description": "Experience the legendary trek to the base camp of the world's highest mountain.",
+    "destination": "Everest Region",
+    "destination_slug": "everest-region",
+    "duration_days": 12,
+    "difficulty": "Strenuous",
+    "best_seasons": ["Spring", "Autumn"],
+    "price_usd": 1500,
+    "price_npr": 197250,
+    "max_altitude": 5364,
+    "rating": 4.9,
+    "review_count": 234,
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&fit=crop"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Kathmandu", "description": "Meet your guide and briefing", "altitude": 1300, "walking_hours": 0 },
+      { "day": 2, "title": "Kathmandu to Lukla", "description": "Scenic flight to Lukla", "altitude": 2860, "walking_hours": 4 },
+      { "day": 3, "title": "Lukla to Phakding", "description": "Trek through Sherpa settlements", "altitude": 2610, "walking_hours": 5 }
+    ],
+    "included": ["Professional guide", "Lodge accommodation", "Meals", "Emergency first aid"],
+    "not_included": ["International flights", "Travel insurance", "Equipment rental"]
+  },
+  {
+    "id": "2",
+    "agency_id": "2",
+    "title": "Annapurna Circuit Trek",
+    "slug": "annapurna-circuit",
+    "description": "One of the world's most beautiful treks circling the Annapurna massif.",
+    "destination": "Annapurna Region",
+    "destination_slug": "annapurna-region",
+    "duration_days": 16,
+    "difficulty": "Moderate",
+    "best_seasons": ["Spring", "Autumn"],
+    "price_usd": 1200,
+    "price_npr": 157800,
+    "max_altitude": 5416,
+    "rating": 4.7,
+    "review_count": 156,
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    "gallery": [],
+    "itinerary": [],
+    "included": ["Guide and porter", "Meals", "Accommodation"],
+    "not_included": ["Equipment"]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "free",
+    "name": "Free",
+    "price_monthly_usd": 0,
+    "price_annual_usd": 0,
+    "price_monthly_npr": 0,
+    "price_annual_npr": 0,
+    "description": "Perfect to get started",
+    "color": "gray",
+    "features": [
+      { "name": "Up to 5 listings", "included": true },
+      { "name": "Basic analytics", "included": true },
+      { "name": "Email support", "included": true },
+      { "name": "Verified badge", "included": false },
+      { "name": "Priority support", "included": false },
+      { "name": "Advanced analytics", "included": false }
+    ]
+  }
+]

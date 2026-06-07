@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Complete Guide to Everest Base Camp",
+    "slug": "guide-everest-base-camp",
+    "excerpt": "Everything you need to know before trekking to the base camp of the world's highest mountain.",
+    "body": "Everest Base Camp trek is one of the most iconic treks in the world...",
+    "author": "Alex Thompson",
+    "category": "guides",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&fit=crop",
+    "published_at": "2024-06-01",
+    "read_time_minutes": 8
+  },
+  {
+    "id": "2",
+    "title": "Best Time to Trek in Nepal",
+    "slug": "best-time-nepal-trekking",
+    "excerpt": "Discover the ideal seasons for trekking adventures in Nepal with weather insights.",
+    "body": "Nepal offers trekking opportunities year-round...",
+    "author": "Emma Wilson",
+    "category": "tips",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&fit=crop",
+    "published_at": "2024-05-25",
+    "read_time_minutes": 6
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "author": "David Chen",
+    "role": "Professional Trekker",
+    "quote": "Funtush made it so easy to find the perfect trek. The agencies are vetted and professional.",
+    "trek": "Everest Base Camp",
+    "rating": 5
+  },
+  {
+    "author": "Maria Garcia",
+    "role": "Travel Blogger",
+    "quote": "Amazing platform connecting trekkers with authentic experiences across Nepal.",
+    "trek": "Annapurna Circuit",
+    "rating": 5
+  },
+  {
+    "author": "Kumar Shrestha",
+    "role": "Adventure Enthusiast",
+    "quote": "The safety features and verified agencies give me peace of mind when booking treks.",
+    "trek": "Langtang Trek",
+    "rating": 5
+  }
+]

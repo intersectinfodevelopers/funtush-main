@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "package_id": "1",
+    "agency_id": "1",
+    "trekker_name": "John Smith",
+    "country": "United States",
+    "rating": 5,
+    "text": "Amazing experience! The guides were knowledgeable and the views were breathtaking. Highly recommend!",
+    "created_at": "2024-05-15",
+    "verified": true
+  },
+  {
+    "id": "2",
+    "package_id": "1",
+    "agency_id": "1",
+    "trekker_name": "Sarah Johnson",
+    "country": "Canada",
+    "rating": 4,
+    "text": "Great trek with fantastic guides. The only downside was the weather on day 5.",
+    "created_at": "2024-05-10",
+    "verified": true
+  },
+  {
+    "id": "3",
+    "package_id": "2",
+    "agency_id": "2",
+    "trekker_name": "Marco Rossi",
+    "country": "Italy",
+    "rating": 5,
+    "text": "Incredibile! Best trek I've ever done. Perfect organization and stunning scenery.",
+    "created_at": "2024-04-28",
+    "verified": true
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "name": "Everest Region",
+    "slug": "everest-region",
+    "region": "Eastern Nepal",
+    "altitude": 5364,
+    "best_season": "Spring, Autumn",
+    "description": "Home to the world's highest mountain and legendary trekking routes.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "package_count": 5
+  },
+  {
+    "id": "2",
+    "name": "Annapurna Region",
+    "slug": "annapurna-region",
+    "region": "Central Nepal",
+    "altitude": 8091,
+    "best_season": "Spring, Autumn",
+    "description": "Stunning views and diverse trekking options around the Annapurna range.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "package_count": 8
+  },
+  {
+    "id": "3",
+    "name": "Langtang Region",
+    "slug": "langtang-region",
+    "region": "Northern Nepal",
+    "altitude": 7246,
+    "best_season": "Spring, Autumn",
+    "description": "Pristine mountain valleys with fewer crowds and rich cultural experiences.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "package_count": 3
+  }
+]
