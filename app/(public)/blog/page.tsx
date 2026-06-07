@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components/shared/PageHeader';
 import { BlogGrid } from '@/components/blog/BlogGrid';
 import blogPosts from '@/data/blog.json';
+import { BlogPost } from '@/types';
 
 export default function BlogPage() {
   return (
@@ -10,7 +11,7 @@ export default function BlogPage() {
         subtitle="Tips, guides, and stories from the mountains"
       />
 
-      <BlogGrid posts={blogPosts as any} />
+      <BlogGrid posts={blogPosts as BlogPost[]} />
     </div>
   );
 }

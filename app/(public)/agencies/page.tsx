@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components/shared/PageHeader';
 import { AgencyGrid } from '@/components/marketplace/agencies/AgencyGrid';
 import agencies from '@/data/agencies.json';
+import { Agency } from '@/types';
 
 export default function AgenciesPage() {
   return (
@@ -10,7 +11,7 @@ export default function AgenciesPage() {
         subtitle="Connect with trusted agencies across Nepal"
       />
 
-      <AgencyGrid agencies={agencies as any} />
+      <AgencyGrid agencies={agencies as Agency[]} />
     </div>
   );
 }

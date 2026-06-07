@@ -3,6 +3,7 @@ import { PackageGrid } from '@/components/marketplace/packages/PackageGrid';
 import { PriceRangeFilter } from '@/components/marketplace/filters/PriceRangeFilter';
 import { DestinationFilter } from '@/components/marketplace/filters/DestinationFilter';
 import packages from '@/data/packages.json';
+import { TrekPackage } from '@/types';
 
 export default function ExplorePage() {
   return (
@@ -21,7 +22,7 @@ export default function ExplorePage() {
 
         {/* Packages Grid */}
         <div className="lg:col-span-3">
-          <PackageGrid packages={packages as any} />
+          <PackageGrid packages={packages as TrekPackage[]} />
         </div>
       </div>
     </div>

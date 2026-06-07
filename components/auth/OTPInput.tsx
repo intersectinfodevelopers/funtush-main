@@ -1,5 +1,3 @@
-import { Input } from '@/components/ui/Input';
-
 interface OTPInputProps {
   value: string;
   onChange: (value: string) => void;

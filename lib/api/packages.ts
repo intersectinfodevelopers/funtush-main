@@ -2,7 +2,7 @@ import { apiClient } from './client';
 import { TrekPackage, ApiResponse, PaginatedResponse } from '@/types';
 
 export async function getPackages(
-  params?: Record<string, any>
+  params?: Record<string, string | number | boolean>
 ): Promise<PaginatedResponse<TrekPackage>> {
   const query = new URLSearchParams(params).toString();
   return apiClient.get(`/packages?${query}`);

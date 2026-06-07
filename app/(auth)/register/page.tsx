@@ -13,7 +13,7 @@ export default function RegisterPage() {
             href="/register/agency"
             className="p-6 border border-gray-300 rounded-lg text-center hover:shadow-lg transition-shadow"
           >
-            <h2 className="text-lg font-semibold">I'm an Agency</h2>
+            <h2 className="text-lg font-semibold">I&apos;m an Agency</h2>
             <p className="text-gray-600 mt-2">List your treks and manage bookings</p>
           </Link>
 
@@ -21,7 +21,7 @@ export default function RegisterPage() {
             href="/register/trekker"
             className="p-6 border border-gray-300 rounded-lg text-center hover:shadow-lg transition-shadow"
           >
-            <h2 className="text-lg font-semibold">I'm a Trekker</h2>
+            <h2 className="text-lg font-semibold">I&apos;m a Trekker</h2>
             <p className="text-gray-600 mt-2">Book amazing treks and connect with agencies</p>
           </Link>
         </div>

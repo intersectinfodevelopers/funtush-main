@@ -2,7 +2,7 @@ import { apiClient } from './client';
 import { BlogPost, ApiResponse, PaginatedResponse } from '@/types';
 
 export async function getBlogPosts(
-  params?: Record<string, any>
+  params?: Record<string, string | number | boolean>
 ): Promise<PaginatedResponse<BlogPost>> {
   const query = new URLSearchParams(params).toString();
   return apiClient.get(`/blog?${query}`);

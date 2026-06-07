@@ -1,4 +1,3 @@
-import { Card, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 
 interface DifficultyBadgeProps {

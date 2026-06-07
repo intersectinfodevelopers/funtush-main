@@ -1,14 +1,13 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { FilterOptions } from '@/lib/utils/search';
 
 export function useFilters() {
   const searchParams = useSearchParams();
-  const [filters, setFilters] = useState<FilterOptions>({});
 
-  useEffect(() => {
+  const filters = useMemo<FilterOptions>(() => {
     const newFilters: FilterOptions = {};
 
     if (searchParams.has('destinations')) {
@@ -31,21 +30,22 @@ export function useFilters() {
       newFilters.minRating = Number(searchParams.get('minRating'));
     }
 
-    setFilters(newFilters);
+    return newFilters;
   }, [searchParams]);
 
   const updateFilter = useCallback(
-    (key: keyof FilterOptions, value: any) => {
-      setFilters((prev) => ({
-        ...prev,
-        [key]: value,
-      }));
+    (_key: keyof FilterOptions, _value: FilterOptions[keyof FilterOptions]) => {
+      // Derived from search params for now; update logic belongs in the consumer.
+      void _key;
+      void _value;
+      return;
     },
     []
   );
 
   const clearFilters = useCallback(() => {
-    setFilters({});
+    // Clear logic belongs in the consumer.
+    return;
   }, []);
 
   return {

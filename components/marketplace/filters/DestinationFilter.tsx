@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
-import { Button } from '@/components/ui/Button';
 
 export function DestinationFilter() {
   const [selected, setSelected] = useState<string[]>([]);

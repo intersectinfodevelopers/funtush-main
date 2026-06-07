@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components/shared/PageHeader';
 import { DestinationGrid } from '@/components/marketplace/destinations/DestinationGrid';
 import destinations from '@/data/destinations.json';
+import { Destination } from '@/types';
 
 export default function DestinationsPage() {
   return (
@@ -10,7 +11,7 @@ export default function DestinationsPage() {
         subtitle="Explore amazing mountain regions across Nepal"
       />
 
-      <DestinationGrid destinations={destinations as any} />
+      <DestinationGrid destinations={destinations as Destination[]} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { apiClient } from './client';
 import { Agency, ApiResponse, PaginatedResponse } from '@/types';
 
 export async function getAgencies(
-  params?: Record<string, any>
+  params?: Record<string, string | number | boolean>
 ): Promise<PaginatedResponse<Agency>> {
   const query = new URLSearchParams(params).toString();
   return apiClient.get(`/agencies?${query}`);
