@@ -4,7 +4,15 @@ import { TrekPackage, ApiResponse, PaginatedResponse } from '@/types';
 export async function getPackages(
   params?: Record<string, string | number | boolean>
 ): Promise<PaginatedResponse<TrekPackage>> {
-  const query = new URLSearchParams(params).toString();
+  const queryParams = new URLSearchParams();
+
+  if (params) {
+    Object.entries(params).forEach(([key, value]) => {
+      queryParams.append(key, String(value));
+    });
+  }
+
+  const query = queryParams.toString();
   return apiClient.get(`/packages?${query}`);
 }
 
