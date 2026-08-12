@@ -1,5 +1,5 @@
 export default function Home() {
-  return (
+  return (<>
     <div>
       {/* ================= HERO SECTION ================= */}
       <section className="relative overflow-hidden bg-[#071b3a] text-white">
@@ -222,8 +222,291 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ================= TRUST FEATURES SECTION ================= */}
+<section className="border-y border-blue-100 bg-white">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="flex min-h-13 items-center justify-between overflow-x-auto">
+
+      {/* Verified Agencies */}
+      <div className="flex shrink-0 items-center gap-2 px-5 py-3">
+        <span className="text-lg text-blue-600">
+          🛡
+        </span>
+
+        <span className="text-sm font-medium text-slate-700">
+          Verified Agencies Only
+        </span>
+      </div>
+
+      {/* Divider */}
+      <div className="h-5 w-px shrink-0 bg-blue-100" />
+
+      {/* Zero Commission */}
+      <div className="flex shrink-0 items-center gap-2 px-5 py-3">
+        <span className="text-lg text-blue-600">
+          ♟
+        </span>
+
+        <span className="text-sm font-medium text-slate-700">
+          Zero Commission
+        </span>
+      </div>
+
+      <div className="h-5 w-px shrink-0 bg-blue-100" />
+
+      {/* Safety Monitoring */}
+      <div className="flex shrink-0 items-center gap-2 px-5 py-3">
+        <span className="text-lg text-blue-600">
+          🔔
+        </span>
+
+        <span className="text-sm font-medium text-slate-700">
+          24/7 Safety Monitoring
+        </span>
+      </div>
+
+      <div className="h-5 w-px shrink-0 bg-blue-100" />
+
+      {/* Rating */}
+      <div className="flex shrink-0 items-center gap-2 px-5 py-3">
+        <span className="text-lg text-blue-600">
+          ★
+        </span>
+
+        <span className="text-sm font-medium text-slate-700">
+          4.9/5 Rating
+        </span>
+      </div>
+
+      <div className="h-5 w-px shrink-0 bg-blue-100" />
+
+      {/* Countries */}
+      <div className="flex shrink-0 items-center gap-2 px-5 py-3">
+        <span className="text-lg text-blue-600">
+          🌐
+        </span>
+
+        <span className="text-sm font-medium text-slate-700">
+          62 Countries
+        </span>
+      </div>
+
+      <div className="h-5 w-px shrink-0 bg-blue-100" />
+
+      {/* Live */}
+      <div className="flex shrink-0 items-center gap-2 px-5 py-3">
+        <span className="text-lg text-blue-600">
+          ⚡
+        </span>
+
+        <span className="text-sm font-medium text-slate-700">
+          Live in 10 Minutes
+        </span>
+      </div>
+
     </div>
+  </div>
+</section>
+
+    </div>
+    
+    {/* ================= SEARCH SECTION ================= */}
+<section className="bg-[#f5f8ff] px-4 py-10 sm:px-6 lg:px-8">
+
+  <div className="mx-auto max-w-7xl">
+
+    <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-[0_15px_50px_rgba(30,80,150,0.10)] sm:p-7">
+
+      {/* ================= CATEGORY TABS ================= */}
+      <div className="mb-6 inline-flex flex-wrap items-center gap-1 rounded-xl bg-[#eef4ff] p-1">
+
+        <button
+          type="button"
+          className="rounded-lg px-5 py-3 text-sm font-medium text-slate-600 transition hover:text-blue-600"
+        >
+          ▲ Treks
+        </button>
+
+        <button
+          type="button"
+          className="rounded-lg px-5 py-3 text-sm font-medium text-slate-600 transition hover:text-blue-600"
+        >
+          ▦ Hotels
+        </button>
+
+        <button
+          type="button"
+          className="rounded-lg px-5 py-3 text-sm font-medium text-slate-600 transition hover:text-blue-600"
+        >
+          ▣ Tours
+        </button>
+
+        <button
+          type="button"
+          className="rounded-lg px-5 py-3 text-sm font-medium text-slate-600 transition hover:text-blue-600"
+        >
+          ♟ Group Tours
+        </button>
+
+        {/* Active */}
+        <button
+          type="button"
+          className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-blue-600 shadow-sm ring-1 ring-blue-100"
+        >
+          ▦ Agencies
+        </button>
+
+      </div>
+
+      {/* ================= SEARCH FIELDS ================= */}
+      <div className="grid gap-3 lg:grid-cols-[1.5fr_1fr_1fr_1fr_auto]">
+
+        {/* Destination */}
+        <div>
+          <label className="mb-2 flex items-center gap-1 text-xs font-bold tracking-wide text-slate-600">
+            <span className="text-blue-500">⌕</span>
+            DESTINATION / TREK NAME
+          </label>
+
+          <div className="flex h-12 items-center rounded-xl border-2 border-blue-100 bg-white px-3 transition focus-within:border-blue-500">
+
+            <span className="mr-3 text-xl text-blue-500">
+              ⌕
+            </span>
+
+            <input
+              type="text"
+              placeholder="Nepal, Everest, Annapurna..."
+              className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
+            />
+
+          </div>
+        </div>
+
+        {/* Duration */}
+        <div>
+          <label className="mb-2 flex items-center gap-1 text-xs font-bold tracking-wide text-slate-600">
+            <span className="text-blue-500">▣</span>
+            DURATION
+          </label>
+
+          <select
+            defaultValue="8-14"
+            className="h-12 w-full appearance-none rounded-xl border-2 border-blue-100 bg-white px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500"
+          >
+            <option value="any">Any Duration</option>
+            <option value="1-3">1-3 Days</option>
+            <option value="4-7">4-7 Days</option>
+            <option value="8-14">8-14 Days</option>
+            <option value="15-21">15-21 Days</option>
+            <option value="22+">22+ Days</option>
+          </select>
+        </div>
+
+        {/* Difficulty */}
+        <div>
+          <label className="mb-2 flex items-center gap-1 text-xs font-bold tracking-wide text-slate-600">
+            <span className="text-blue-500">▥</span>
+            DIFFICULTY
+          </label>
+
+          <select
+            defaultValue="any"
+            className="h-12 w-full appearance-none rounded-xl border-2 border-blue-100 bg-white px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500"
+          >
+            <option value="any">Any Level</option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="difficult">Difficult</option>
+            <option value="expert">Expert</option>
+          </select>
+        </div>
+
+        {/* Budget */}
+        <div>
+          <label className="mb-2 flex items-center gap-1 text-xs font-bold tracking-wide text-slate-600">
+            <span className="text-blue-500">$</span>
+            BUDGET / PERSON
+          </label>
+
+          <select
+            defaultValue="any"
+            className="h-12 w-full appearance-none rounded-xl border-2 border-blue-100 bg-white px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500"
+          >
+            <option value="any">Any Budget</option>
+            <option value="0-500">$0 - $500</option>
+            <option value="500-1000">$500 - $1,000</option>
+            <option value="1000-2000">$1,000 - $2,000</option>
+            <option value="2000+">$2,000+</option>
+          </select>
+        </div>
+
+        {/* Search Button */}
+        <div className="flex items-end">
+
+          <button
+            type="button"
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-700 lg:w-auto"
+          >
+            <span className="text-lg">⌕</span>
+            Search
+          </button>
+
+        </div>
+
+      </div>
+
+      {/* ================= QUICK FILTERS ================= */}
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+
+        <span className="mr-1 text-sm font-medium text-slate-500">
+          🔥 Quick filters:
+        </span>
+
+        <button
+          type="button"
+          className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-600 transition hover:bg-blue-100"
+        >
+          ▲ Nepal
+        </button>
+
+        <button
+          type="button"
+          className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:bg-blue-100"
+        >
+          ⭐ Top Rated
+        </button>
+
+        <button
+          type="button"
+          className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:bg-blue-100"
+        >
+          ◴ Free Cancellation
+        </button>
+
+        <button
+          type="button"
+          className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:bg-blue-100"
+        >
+          ⚑ Beginner Friendly
+        </button>
+
+        <button
+          type="button"
+          className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:bg-blue-100"
+        >
+          ♛ Award Winning
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+    </>
+    
   );
+
 }
 
 /* =========================================================
