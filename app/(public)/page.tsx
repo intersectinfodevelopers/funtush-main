@@ -1,3 +1,10 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+import destinations from '@/data/destinations.json';
+import { Destination } from '@/types/destination';
+import { ROUTES } from '@/lib/constants/routes';
+
 export default function Home() {
   return (<>
     <div>
@@ -503,6 +510,287 @@ export default function Home() {
     </div>
   </div>
 </section>
+{/* ================= TOP TREKKING DESTINATIONS ================= */}
+{/* ================= TOP TREKKING DESTINATIONS ================= */}
+<section className="bg-[#f5f8ff] px-4 py-14 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-7xl">
+
+    {/* Section Header */}
+    <div className="mb-8 flex items-end justify-between">
+      <div>
+        <div className="mb-3 flex items-center gap-2 text-xs font-bold tracking-[0.18em] text-blue-600">
+          <span>🌐</span>
+          EXPLORE THE WORLD
+        </div>
+
+        <h2 className="text-4xl font-extrabold tracking-tight text-[#07152f] sm:text-5xl">
+          Top Trekking Destinations
+        </h2>
+
+        <p className="mt-3 text-base text-[#41628d]">
+          From Himalayan giants to Andean trails — discover your next adventure
+        </p>
+      </div>
+
+      <button
+        type="button"
+        className="hidden items-center gap-2 rounded-xl border-2 border-blue-100 bg-white px-6 py-3 text-sm font-semibold text-[#07152f] transition-all duration-200 hover:border-blue-400 hover:text-blue-600 sm:flex"
+      >
+        <span className="text-lg">→</span>
+        View All Destinations
+      </button>
+    </div>
+
+
+    {/* ================= DESTINATION CARDS ================= */}
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[2fr_repeat(4,1fr)] lg:grid-rows-[180px_180px]">
+
+      {/* ================= NEPAL ================= */}
+      <div className="destination-card group relative min-h-100 overflow-hidden rounded-2xl lg:row-span-2 lg:min-h-0">
+
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=85')",
+          }}
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
+
+        {/* Content */}
+        <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+
+          {/* Badge */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#07152f] px-4 py-2 text-xs font-bold text-white">
+            <span>🏆</span>
+            Most Popular
+          </div>
+
+          <div className="text-xs font-semibold uppercase text-white/80">
+            NP
+          </div>
+
+          <h3 className="mt-1 text-3xl font-extrabold text-white">
+            Nepal
+          </h3>
+
+          <p className="mt-2 text-sm text-white/80">
+            🏢 342 Agencies
+            <span className="mx-2">·</span>
+            2,800+ Packages
+          </p>
+
+          {/* Tags */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["Everest", "Annapurna", "Langtang", "Manaslu"].map(
+              (tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm transition-colors group-hover:bg-white/25"
+                >
+                  {tag}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+
+
+      {/* ================= PERU ================= */}
+      <DestinationCard
+        countryCode="PE"
+        name="Peru"
+        agencies="89"
+        location="Inca Trail"
+        image="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=85"
+      />
+
+
+      {/* ================= TANZANIA ================= */}
+      <DestinationCard
+        countryCode="TZ"
+        name="Tanzania"
+        agencies="54"
+        location="Kilimanjaro"
+        image="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=600&q=85"
+      />
+
+
+      {/* ================= PATAGONIA ================= */}
+      <DestinationCard
+        countryCode="CL"
+        name="Patagonia"
+        agencies="41"
+        location="Torres del Paine"
+        image="https://images.unsplash.com/photo-1478827387698-1527781a4887?auto=format&fit=crop&w=600&q=85"
+      />
+
+
+      {/* ================= BHUTAN ================= */}
+      <DestinationCard
+        countryCode="BT"
+        name="Bhutan"
+        agencies="28"
+        location="Snowman"
+        image="https://images.unsplash.com/photo-1553901753-215db344677a?auto=format&fit=crop&w=600&q=85"
+      />
+
+
+      {/* ================= INDIA ================= */}
+      <DestinationCard
+        countryCode="IN"
+        name="India"
+        agencies="67"
+        location="Ladakh"
+        image="https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=600&q=85"
+      />
+
+    </div>
+  </div>
+</section>
+
+{/* ================= PLATFORM OVERVIEW ================= */}
+<section className="relative overflow-hidden bg-[#081a35] px-4 py-20 sm:px-6 lg:px-8">
+
+  {/* Subtle background decoration */}
+  <div className="pointer-events-none absolute inset-0 opacity-20">
+    <div className="absolute left-1/2 top-0 h-125 w-175 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+  </div>
+
+  <div className="relative mx-auto max-w-7xl">
+
+    {/* ================= HEADER ================= */}
+    <div className="mx-auto max-w-3xl text-center">
+
+      {/* Badge */}
+      <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/10 px-5 py-2 text-xs font-bold text-blue-300">
+        <span>⚡</span>
+        Platform Overview
+      </div>
+
+      {/* Heading */}
+      <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+        Run Your Entire Business
+        <br />
+        From{" "}
+        <span className="text-blue-500">
+          One System
+        </span>
+      </h2>
+
+      {/* Description */}
+      <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+        Online + offline bookings, payments, guide management, inventory
+        and safety — all from a single infrastructure.
+      </p>
+    </div>
+
+
+    {/* ================= FEATURE CARDS ================= */}
+    <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+      {/* Package Manager */}
+      <PlatformCard
+        icon="▰"
+        iconClass="text-emerald-400"
+        title="Package Manager"
+        description="Build rich trek packages with itineraries, altitude tables, pricing tiers, gallery, SEO, and auto-generated PDFs."
+      />
+
+      {/* Booking & Payments */}
+      <PlatformCard
+        icon="▰"
+        iconClass="text-emerald-400"
+        title="Booking & Payments"
+        description="Accept globally with Stripe, eSewa, Khalti, Fonepay. Instant confirmation, invoicing and webhook tracking."
+      />
+
+      {/* Guide Management */}
+      <PlatformCard
+        icon="◉"
+        iconClass="text-yellow-400"
+        title="Guide Management"
+        description="Profiles, certifications, availability, live GPS tracking, performance scoring — from one screen."
+      />
+
+      {/* Safety Monitoring */}
+      <PlatformCard
+        icon="⬟"
+        iconClass="text-red-400"
+        title="Safety Monitoring"
+        description="Live GPS, SOS dashboard, 15-min response protocol, 4-layer offline pipeline. Never gated — all tiers."
+      />
+
+      {/* Finance & Accounting */}
+      <PlatformCard
+        icon="◔"
+        iconClass="text-violet-400"
+        title="Finance & Accounting"
+        description="Full P&L, guide payroll, income/expense, tax summary, balance sheet and exportable PDF reports."
+      />
+
+      {/* White Label Website */}
+      <PlatformCard
+        icon="◎"
+        iconClass="text-blue-400"
+        title="White-Label Website"
+        description="Your brand, your domain. Custom colors, logo, SEO config, blog, navigation builder — zero coding."
+      />
+
+    </div>
+
+
+    {/* ================= CTA BUTTONS ================= */}
+    <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+      <button
+        type="button"
+        className="flex min-w-60 items-center justify-center gap-3 rounded-xl bg-blue-500 px-7 py-4 font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-blue-500/30"
+      >
+        <span className="text-lg">🚀</span>
+        Start Selling Online
+      </button>
+
+      <button
+        type="button"
+        className="flex min-w-50 items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-bold text-blue-600 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-50"
+      >
+        <span className="text-lg">◉</span>
+        Explore Platform
+      </button>
+
+    </div>
+
+
+    {/* ================= TRUST POINTS ================= */}
+    <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-slate-500">
+
+      <span>
+        <span className="text-emerald-400">✓</span>{" "}
+        No setup fees
+      </span>
+
+      <span className="hidden text-slate-700 sm:inline">•</span>
+
+      <span>
+        <span className="text-emerald-400">✓</span>{" "}
+        Zero commission
+      </span>
+
+      <span className="hidden text-slate-700 sm:inline">•</span>
+
+      <span>
+        <span className="text-emerald-400">✓</span>{" "}
+        Cancel anytime
+      </span>
+
+    </div>
+
+  </div>
+</section>
     </>
     
   );
@@ -546,6 +834,90 @@ function SearchField({ label, value }: { label: string; value: string }) {
       </p>
 
       <p className="mt-1 truncate text-sm text-slate-300">{value}</p>
+    </div>
+  );
+}
+function DestinationCard({
+  countryCode,
+  name,
+  agencies,
+  location,
+  image,
+}: {
+  countryCode: string;
+  name: string;
+  agencies: string;
+  location: string;
+  image: string;
+}) {
+  return (
+    <div className="group relative min-h-45 overflow-hidden rounded-2xl">
+
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
+        style={{
+          backgroundImage: `url('${image}')`,
+        }}
+      />
+
+      {/* Gradient */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-300 group-hover:from-black/95" />
+
+      {/* Content */}
+      <div className="absolute inset-x-0 bottom-0 z-10 p-4 text-white">
+
+        <div className="text-xs font-semibold">
+          {countryCode}
+        </div>
+
+        <h3 className="text-xl font-extrabold leading-tight">
+          {name}
+        </h3>
+
+        <p className="mt-1 text-xs leading-5 text-white/80">
+          {agencies} Agencies
+          <span className="mx-1">·</span>
+          {location}
+        </p>
+
+      </div>
+    </div>
+  );
+}
+
+
+function PlatformCard({
+  icon,
+  iconClass,
+  title,
+  description,
+}: {
+  icon: string;
+  iconClass: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="group relative min-h-46.25 overflow-hidden rounded-2xl border border-slate-700/80 bg-[#172b48] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-[#1b3354] hover:shadow-xl hover:shadow-blue-950/30">
+
+      {/* Icon */}
+      <div
+        className={`mb-7 text-3xl transition-transform duration-300 group-hover:scale-110 ${iconClass}`}
+      >
+        {icon}
+      </div>
+
+      {/* Title */}
+      <h3 className="text-lg font-extrabold text-white">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="mt-2 text-sm leading-6 text-slate-400">
+        {description}
+      </p>
+
     </div>
   );
 }
