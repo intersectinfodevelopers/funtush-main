@@ -1,7 +1,15 @@
+import type { Metadata } from 'next';
+import { PageContainer } from '@/components/shared/PageContainer';
+import { PageHeader } from '@/components/shared/PageHeader';
+export const metadata: Metadata = {
+  title: 'Safety & Trust',
+  description: 'How Funtush verifies agencies and keeps trekkers safe.',
+};
+
 export default function SafetyPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8">Safety & Trust</h1>
+    <PageContainer narrow>
+      <PageHeader title="Safety & Trust" />
 
       <div className="space-y-8">
         <section>
@@ -35,6 +43,6 @@ export default function SafetyPage() {
           </p>
         </section>
       </div>
-    </div>
+    </PageContainer>
   );
 }

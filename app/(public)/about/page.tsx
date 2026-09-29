@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
+import { PageContainer } from '@/components/shared/PageContainer';
 import { PageHeader } from '@/components/shared/PageHeader';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'About Funtush — a marketplace for trekking agencies in Nepal.',
+};
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <PageContainer narrow>
       <PageHeader
         title="About Funtush"
         subtitle="Making trekking adventures accessible to everyone"
@@ -16,6 +23,6 @@ export default function AboutPage() {
           Our mission is to make it easy for adventure seekers to book the perfect trek while supporting local agencies.
         </p>
       </div>
-    </div>
+    </PageContainer>
   );
 }

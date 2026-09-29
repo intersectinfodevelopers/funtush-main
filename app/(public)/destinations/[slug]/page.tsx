@@ -2,49 +2,41 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import destinations from '@/data/destinations.json';
-import packages from '@/data/packages.json';
-import { Destination } from '@/types/destination';
-import { TrekPackage } from '@/types/package';
+import { getDestinationBySlug } from '@/lib/api/marketplace';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { ROUTES } from '@/lib/constants/routes';
 import { PackageCard } from '@/components/marketplace/packages/PackageCard';
+import { PageContainer } from '@/components/shared/PageContainer';
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
-function getDestination(slug: string) {
-  return (destinations as Destination[]).find((destination) => destination.slug === slug);
-}
+export default async function DestinationPage({ params }: Props) {
+  const { slug } = await params;
+  const result = await getDestinationBySlug(slug);
 
-export default function DestinationPage({ params }: Props) {
-  const destination = getDestination(params.slug);
-
-  if (!destination) {
+  if (!result) {
     return notFound();
   }
-
-  const relatedPackages = (packages as TrekPackage[]).filter(
-    (pkg) => pkg.destination_slug === destination.slug
-  );
+  const { destination, packages: relatedPackages } = result;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <PageContainer className="max-w-6xl">
       <PageHeader title={destination.name} subtitle={destination.description} />
 
       <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
         <div className="space-y-6">
-          <div className="relative h-72 overflow-hidden rounded-3xl">
-            <Image
-              src={destination.image_url}
-              alt={destination.name}
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
+          <div className="relative h-72 overflow-hidden rounded-3xl bg-gray-100">
+            {destination.image_url && (
+              <Image
+                src={destination.image_url}
+                alt={destination.name}
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            )}
           </div>
 
           <div className="rounded-3xl border border-gray-200 p-6">
@@ -52,15 +44,15 @@ export default function DestinationPage({ params }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-600">
               <div>
                 <p className="text-sm font-semibold text-gray-900">Region</p>
-                <p>{destination.region}</p>
+                <p>{destination.region || 'Not specified'}</p>
               </div>
               <div>
                 <p className="text-sm font-semibold text-gray-900">Altitude</p>
-                <p>{destination.altitude} meters</p>
+                <p>{destination.altitude ? `${destination.altitude} meters` : 'Not specified'}</p>
               </div>
               <div>
                 <p className="text-sm font-semibold text-gray-900">Best season</p>
-                <p>{destination.best_season}</p>
+                <p>{destination.best_season || 'Not specified'}</p>
               </div>
             </div>
           </div>
@@ -89,6 +81,6 @@ export default function DestinationPage({ params }: Props) {
           </Link>
         </aside>
       </div>
-    </div>
+    </PageContainer>
   );
 }

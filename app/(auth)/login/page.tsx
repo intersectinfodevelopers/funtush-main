@@ -1,17 +1,19 @@
-import { LoginForm } from '@/components/auth/LoginForm';
-import { Card, CardContent, CardHeader } from '@/components/ui/Card';
+import { redirect } from 'next/navigation';
+import { siteConfig } from '@/config/site';
 
-export default function LoginPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <h1 className="text-2xl font-bold">Login to Funtush</h1>
-        </CardHeader>
-        <CardContent>
-          <LoginForm />
-        </CardContent>
-      </Card>
-    </div>
-  );
+// Login (trekker and agency both) lives on the app dashboard, not the
+// marketing/marketplace site — that's where the real session, "remember me"
+// and role handling already exist. This page only forwards there.
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = await searchParams;
+  const qs = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (typeof value === 'string') qs.set(key, value);
+  }
+  const query = qs.toString();
+  redirect(`${siteConfig.appUrl}/login${query ? `?${query}` : ''}`);
 }

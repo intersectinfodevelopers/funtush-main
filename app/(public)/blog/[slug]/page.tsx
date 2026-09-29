@@ -7,6 +7,7 @@ import { BlogPost } from '@/types/blog';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { ROUTES } from '@/lib/constants/routes';
 import { formatDate, formatReadTime } from '@/lib/utils/format';
+import { PageContainer } from '@/components/shared/PageContainer';
 
 type Props = {
   params: {
@@ -28,7 +29,7 @@ export default function BlogPostPage({ params }: Props) {
   const paragraphs = post.body.split('\n').filter((paragraph) => paragraph.trim().length > 0);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
+    <PageContainer className="max-w-5xl">
       <PageHeader title={post.title} subtitle={post.excerpt} />
 
       <div className="rounded-3xl border border-gray-200 overflow-hidden">
@@ -66,6 +67,6 @@ export default function BlogPostPage({ params }: Props) {
           </Link>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }

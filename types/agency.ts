@@ -19,5 +19,6 @@ export interface Agency {
   email: string;
   website?: string;
   address: string;
-  established_year: number;
+  /** Not available from the agency directory listing — only the full profile fetch knows this. */
+  established_year?: number;
 }
