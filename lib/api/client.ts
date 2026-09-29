@@ -1,4 +1,5 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001/api';
+// Real backend (apps/api), mounted at the root — not "/api" (that prefix never existed).
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:4000';
 
 export const apiClient = {
   baseURL: BASE_URL,
@@ -13,6 +14,9 @@ export const apiClient = {
         'Content-Type': 'application/json',
         ...options.headers,
       },
+      // Server-component reads are curated homepage/directory data — cheap to
+      // let Next revalidate every minute instead of caching forever.
+      next: { revalidate: 60 },
     });
 
     if (!response.ok) {
@@ -22,8 +26,8 @@ export const apiClient = {
     return response.json();
   },
 
-  get<T>(endpoint: string) {
-    return this.request<T>(endpoint, { method: 'GET' });
+  get<T>(endpoint: string, headers?: Record<string, string>) {
+    return this.request<T>(endpoint, { method: 'GET', headers });
   },
 
   post<T>(endpoint: string, data: unknown) {

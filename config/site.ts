@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Funtush',
   description: 'Book authentic trekking and travel experiences across Nepal',
   url: 'https://funtush.com',
-  appUrl: 'https://app.funtush.com',
+  appUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://app.funtush.com',
   ogImage: 'https://funtush.com/og.jpg',
   social: {
     twitter: 'https://twitter.com/funtush',

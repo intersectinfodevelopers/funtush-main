@@ -2,7 +2,10 @@ import './globals.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Funtush',
+  title: {
+    default: 'Funtush — Trekking in Nepal',
+    template: '%s | Funtush',
+  },
   description: 'Book authentic trekking and travel experiences across Nepal',
 };
 
@@ -12,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-white text-gray-900 min-h-screen">
-        <main>{children}</main>
-      </body>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className="min-h-screen bg-white text-gray-900 antialiased">{children}</body>
     </html>
   );
 }
